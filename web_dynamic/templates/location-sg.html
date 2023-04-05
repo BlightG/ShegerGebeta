@@ -1,0 +1,25 @@
+{% extends "layout-sg.html" %}
+{% block title %}
+  <script type="text/javascript" src="../../static/scripts/food-sg.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../static/styles/body.css">
+  <link rel="stylesheet" type="text/css" href="../../static/styles/common.css">
+  <link rel="stylesheet" type="text/css" href="../../static/styles/header.css">
+  <link rel="stylesheet" type="text/css" href="../../static/styles/footer.css">
+  <link rel="stylesheet" type="text/css" href="../../static/styles/naviagation.css">
+  <link rel="shortcut icon" href="../static/images/shegergebeta.jpg">
+{% endblock title %}
+{% block content %}
+  <div class="main_body">
+    {% if places %}
+      {% for place in places %}
+        <ul class="food">
+          <li>name {{ place.name }}</li>
+          <li>location {{ place.Location_link}}</li>
+          <li>descritpion {{ place.description }}</li>
+        </ul>
+      {% endfor %}
+    {% else %}
+      <p>No Mathcing results</p>
+    {% endif %}
+  </div>
+{% endblock content %}

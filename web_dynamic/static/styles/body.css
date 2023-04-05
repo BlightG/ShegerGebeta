@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fbe1dc50;
+    font-family: Circular, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+div.title {
+    font-size: large;
+}

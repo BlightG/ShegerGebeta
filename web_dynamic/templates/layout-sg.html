@@ -3,23 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title> Sheger Gebeta</title>
-    <link rel="stylesheet" href="styles/common.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    {% block title %} {% endblock title %}
   </head>
   <body>
     <header>
       <div class="logo"></div>
-      <!-- <div class="title"> Sheger Gebeta</div> -->
-    <!-- </header> -->
       <div class="navigation">
-        <button class="home">Home</button>
-        <button class="location">Location</button>
-        <button class="foods">Foods</button>
+        <div class="toggle">
+          <button class="home">Home</button>
+          <button class="location">Location</button>
+          <button class="foods">Foods</button>
+        </div>
         <div class="search">
           <div class="icon"></div>
           <input type="search" placeholder="Search" class="search_bar">
+          <button class="search_bttn">Search</button>
         </div>
       </div>
-      </header>
+    </header>
+    {% block content %} {% endblock %}
     <footer>Bon apetite</footer>
   </body>
 </html>

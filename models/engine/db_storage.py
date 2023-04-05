@@ -4,12 +4,16 @@
 """
 import os
 import models
+import sqlalchemy
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker, scoped_session
 from models.base_model import BaseModel, Base
 from models.food import Food
 from models.place import Place
 from models.tag import Tag
+
+
+classes = {"BaseModel": BaseModel, "Food": Food, "Place": Place, "Tag": Tag}
 
 class DBstorage:
     """this class manages the storage of shegergebeta components"""
@@ -73,3 +77,36 @@ class DBstorage:
         """ call remove() method on the private
             session attribute (self.__session) """
         self.__session.close()
+
+    def get(self, cls, id):
+        """
+        Returns the object based on the class name and its ID, or
+        None if not found
+        """
+        if cls not in classes.values():
+            return None
+
+        all_cls = models.storage.all(cls)
+        for value in all_cls.values():
+            if (value.id == id):
+                return value
+
+        return None
+
+    def search(self, cls, att_name, att_value):
+        """
+        searchs a column of a class for a specific value
+        """
+
+        if cls is None or att_name is None or att_value is None:
+            return None
+
+        if cls not in classes.values():
+            return None
+
+        filter_dict = {att_name:att_value}
+        try:
+            search = self.__session.query(cls).filter_by(**filter_dict).all()
+        except sqlalchemy.exc.OperationalError:
+            return None
+        return search

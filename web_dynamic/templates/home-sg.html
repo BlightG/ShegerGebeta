@@ -1,0 +1,30 @@
+{% extends "layout-sg.html" %}
+{% block title %}
+  <script type="text/javascript" src="../static/scripts/home-sg.js"></script>
+  <link rel="stylesheet" type="text/css" href="../static/styles/body.css">
+  <link rel="stylesheet" type="text/css" href="../static/styles/common.css">
+  <link rel="stylesheet" type="text/css" href="../static/styles/header.css">
+  <link rel="stylesheet" type="text/css" href="../static/styles/footer.css">
+  <link rel="stylesheet" type="text/css" href="../static/styles/naviagation.css">
+  <link rel="shortcut icon" href="../static/images/shegergebeta.jpg">
+{% endblock title %}
+{% block content %}
+<div class="main_body"> 
+  {% for food in foods %}
+    <ul class="food">
+      <img src="{{ food.food_image }}">
+      <li>Food {{ food.food_name }}</li>
+      <li>price {{ food.price }}</li>
+      <li>reviwed on {{ food.review_date}}</li>
+      <li>descritpion {{ food.description }}</li>
+      {% for place in places %}
+        {% if place.id == food.place_id %}
+          <li>
+            <a href="{{ place.Location_link }}" target="_blank"> location</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</div>
+{% endblock content%}

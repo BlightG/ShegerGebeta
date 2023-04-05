@@ -1,0 +1,68 @@
+.navigation button {
+    border: 0px;
+    font-size: 21px;
+    font-weight: bold;
+    background-color: #ababab;
+}
+
+.toggle button:hover {
+    color: #562896;
+}
+
+.toggle button.home,
+.toggle button.location,
+.toggle button.foods {
+    margin-right: 20px;    
+}
+
+.navigation div.search {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 30px;
+    width: 300px;
+    border: 2px solid;
+    border-radius: 10px;
+    font-weight: normal;
+}
+
+div.search input.search_bar {
+    border: 0px;
+    background-color: #ababab;
+    width: 200px
+}
+
+input{
+    outline: none;
+}
+
+div.search div.icon {
+    background-image: url("../images/search_glass.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 18px;
+    width: 20px;
+}
+
+.navigation div.search_bar {
+    padding-right:80px;
+    padding-left: 30px;
+}
+
+.search .search_bttn {
+    background-color: rgb(76, 143, 243);
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.search .search_bttn:hover {
+    background-color: rgb(76, 129, 207);
+    color: #000000;
+}
+
+.search .search_bttn:active {
+    background-color: rgb(53, 98, 165);
+    color: #000000;
+}

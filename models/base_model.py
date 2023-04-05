@@ -25,7 +25,6 @@ class BaseModel:
             except KeyError:
                 self.id = str(uuid.uuid4())
             self.__dict__.update(kwargs)
-            print(self.__dict__)
         models.storage.new(self)
 
     def __str__(self):

@@ -1,0 +1,17 @@
+.food {
+    width: auto;
+    border: 2px solid #37dc05;
+    list-style-type: none;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.food img {
+    margin-bottom: 30px;
+}
+div.main_body {
+    display: flex;
+    justify-content: left;
+}
+

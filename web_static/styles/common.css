@@ -9,6 +9,7 @@ body {
 header {
     display: flex;
     align-items: center;
+    background-color: #ababab;
 }
 
 div.title {
@@ -38,7 +39,7 @@ button {
     /* padding: 0px; */
     font-size: 21px;
     font-weight: bold;
-    background-color: auto;
+    background-color: #ababab;
 }
 
 button:hover {
@@ -61,11 +62,18 @@ button:hover {
     align-items: center;
     margin-left: 50%;
     padding-left: 10px;
+    padding-right: 5px;
     height: 22px;
-    width: 40px;
+    width: 250px;
     border: 2px solid;
     border-radius: 10px;
     font-weight: normal;
+}
+
+.navigation div.search input.search_bar {
+    border: 0px;
+    background-color: #ababab;
+    width: 100px
 }
 
 div.search div.search_bar:hover {
@@ -93,4 +101,8 @@ footer {
     font-size: larger;
     justify-content: center;
     align-items: center;
+    background-color: #114900;
+    color:#d1fbc4
 }
+
+/* input: */
