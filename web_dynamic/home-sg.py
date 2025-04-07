@@ -44,7 +44,7 @@ def seach_food(name):
     places = storage.all(Place).values()
     places = sorted(places, key=lambda k: k.name)
 
-    return render_template('home-sg.html',
+    return render_template('food-sg.html',
                             foods=r.json(),
                             places=places)
 
@@ -63,6 +63,19 @@ def list_place():
     r = requests.get('http://172.26.250.210:5001/api/v1/place')
     return render_template('location-sg.html',
                              places=r.json())
+
+@app.route('/place/<id>', strict_slashes=False)
+def list_menu(id):
+    """ list a place food """
+    r = requests.get('http://172.26.250.210:5001/api/v1/place/' + id)
+    print(r.json())
+
+    places = storage.search(Place, 'id', id)
+    places = sorted(places, key=lambda k: k.name)
+
+    return render_template('food-sg.html',
+                            foods=r.json(),
+                            places=places)
 
 if __name__ == "__main__":
     """ Main Function """

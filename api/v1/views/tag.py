@@ -5,5 +5,3 @@ from models import storage
 from api.v1.views import  app_views
 from flask import abort, jsonify, make_response, resquest
 from flasgger.utils import swag_from
-
-

@@ -6,16 +6,19 @@
   <link rel="stylesheet" type="text/css" href="../../static/styles/header.css">
   <link rel="stylesheet" type="text/css" href="../../static/styles/footer.css">
   <link rel="stylesheet" type="text/css" href="../../static/styles/naviagation.css">
-  <link rel="shortcut icon" href="../static/images/shegergebeta.jpg">
+  <link rel="stylesheet" type="text/css" href="../../static/styles/place_list.css">
+  <link rel="shortcut icon" href="../../static/images/shegergebeta.jpg">
 {% endblock title %}
 {% block content %}
   <div class="main_body">
     {% if places %}
       {% for place in places %}
-        <ul class="food">
-          <li>name {{ place.name }}</li>
-          <li>location {{ place.Location_link}}</li>
-          <li>descritpion {{ place.description }}</li>
+        <ul class="place" data-id="{{place.id}}">
+          <li>{{ place.name }}</li>
+          <li>
+            <a href="{{ place.Location_link }}" target="_blank"> location</a>
+          </li>
+          <li>{{ place.description }}</li>
         </ul>
       {% endfor %}
     {% else %}

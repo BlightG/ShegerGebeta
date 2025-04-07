@@ -4,6 +4,7 @@ $(function () {
     let location_bttn = document.querySelector('button.location');
     let home_bttn = document.querySelector('button.home');
     let food_bttn = document.querySelector('button.foods');
+    let place_bttn = document.querySelectorAll('ul.place');
   
     search_bttn.addEventListener('click',  () => {
       let value = search_field.value;
@@ -17,12 +18,17 @@ $(function () {
     });
   
     food_bttn.addEventListener('click', () => {
-      window.open('http://172.26.250.210:5000/', '_self')
+      window.open('http://172.26.250.210:5000/', '_self');
     });
   
     home_bttn.addEventListener('click', () => {
-      window.open('http://172.26.250.210:5000/', '_self')
+      window.open('http://172.26.250.210:5000/', '_self');
     });
-  
-    location_bttn
-  })
+    for (let place of place_bttn){
+      place.addEventListener('click', () => {
+        const id = place.getAttribute('data-id');
+        // console.log("The id is ", id)
+        window.open('http://172.26.250.210:5000/place/' + id, '_self');
+      });
+    }
+  });

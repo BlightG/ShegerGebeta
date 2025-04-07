@@ -15,7 +15,7 @@
       <img src="{{ food.food_image }}">
       <li>Food {{ food.food_name }}</li>
       <li>price {{ food.price }}</li>
-      <li>reviwed on {{ food.review_date}}</li>
+      <li>reviwed on {{ food.review_date }}</li>
       <li>descritpion {{ food.description }}</li>
       {% for place in places %}
         {% if place.id == food.place_id %}

@@ -15,6 +15,7 @@ class Food(BaseModel, Base):
     price = Column(Float, nullable=False, server_default='0.0')
     review_date = Column(DateTime, default=datetime.utcnow(), nullable=False)
     place_id = Column(String(60), ForeignKey('places.id'), nullable=False)
+    tag_id = Column(String(60), ForeignKey('tags.id'), nullable=False)
     # places = relationship('Place', backref='foods')
 
     def __init__(self, *args, **kwargs):

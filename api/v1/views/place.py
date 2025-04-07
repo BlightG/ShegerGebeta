@@ -12,7 +12,7 @@ from flasgger.utils import swag_from
 def get_place():
     """ retrives all foods for a place """
     places = storage.all(Place)
-    print(places)
+
     if len(places) == 0:
         return jsonify({})
     place_list = []
@@ -20,11 +20,11 @@ def get_place():
         place_list.append(place.to_dict())
     return jsonify(place_list)
 
-@app_views.route('/place/<name>', methods=['GET'], strict_slashes=False)
+@app_views.route('/place/<id>', methods=['GET'], strict_slashes=False)
 @swag_from('documentation/place/place_menu.yml')
-def get_menu(name):
+def get_menu(id):
     """ retrives all foods for a place """
-    places = storage.search(Place, 'name', name)
+    places = storage.search(Place, 'id', id)
     
     if len(places) == 0:
         return jsonify({})
@@ -35,6 +35,7 @@ def get_menu(name):
     
     for food in all_food:
         list_food.append(food.to_dict())
+    print(list_food)
     return jsonify(list_food)
 
 @app_views.route('/place/name/<name>', methods=['GET'], strict_slashes=False)

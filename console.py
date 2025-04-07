@@ -13,7 +13,7 @@ from models.tag import Tag
 
 classes = {"BaseModel": BaseModel, "Food": Food, "Place": Place, "Tag": Tag}
 types = {"Longtiude": float, "Latitude":float,
-         "place_id": int, "price": float, "review_date":datetime, "food_image":str}
+         "place_id": int, "price": float, "review_date":datetime, "food_image":str, "tag_name": str}
 
 class SGCommand(cmd.Cmd):
     """ SGCommand console """
@@ -201,7 +201,7 @@ class SGCommand(cmd.Cmd):
 
                 # update dictionary with name, value pair
                 new_dict.__dict__.update({att_name: att_val})
-                print(new_dict)
+                print(type(new_dict))
         new_dict.save()  # save updates to file
         print(new_dict)
 
